@@ -1,0 +1,93 @@
+.table {
+    width: 100%;
+    border-collapse:collapse;
+    font-family: Arial, sans-serif;
+    border: 2px solid #000; /* This adds a border around your table */
+    margin: 10px; /* This adds some space around your table */
+    box-shadow: 0 0 10px rgba(137, 139, 0, 0.15); /* This adds a shadow to give a 3D effect */
+}
+
+.table th {
+    background-color: #f8f8f8;
+    text-align: left;
+    padding: 10px;
+}
+
+.table td {
+    padding: 10px;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-header{
+    font-size: 30px; /* Change this to the size you want */
+    text-align: center;
+    font-family:inherit
+}
+
+.centre-text{
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+
+.scrollable-tbody {
+    display: block;
+    height: 200px; 
+    overflow-y: auto;
+}
+
+
+.table thead{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 20px;
+}
+
+
+.table-container {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    margin-right: 10px; 
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centre-text {
+    margin-right: 10px;
+}
+
+.header-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* makes the button circular */
+    width: 50px; /* adjust as needed */
+    height: 50px; /* adjust as needed */
+    background-color: rgb(209, 184, 184); /* change to your preferred color */
+    border: none /* removes default button styling */
+}
+
+.header-button:hover {
+    background-color: red; /* changes color on hover */
+}

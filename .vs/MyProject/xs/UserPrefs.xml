@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{CA953A2E-1587-414C-93CE-F75F7EA194AD}|https">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyProject/Controllers/TestController.cs">
+    <Files>
+      <File FileName="MyProject/Program.cs" />
+      <File FileName="MyProject/appsettings.Development.json" />
+      <File FileName="MyProject/Properties/launchSettings.json" />
+      <File FileName="MyProject/WeatherForecast.cs" />
+      <File FileName="MyProject/Controllers/TestController.cs" Line="18" Column="18" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MyProject" expanded="True">
+            <Node name="MyProject" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="TestController.cs" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MyProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

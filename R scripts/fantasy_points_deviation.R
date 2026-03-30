@@ -2,7 +2,6 @@ library(fitzRoy)
 library(dplyr)
 library(ggplot2)
 
-# Fetch player stats for the 2023 season
 player_stats <- fetch_player_stats(season = 2023, source = "fryzigg")
 
 # Identify star players based on fantasy points
@@ -11,7 +10,7 @@ star_players_fantasy <- player_stats %>%
   summarise(AvgFantasyPoints = mean(afl_fantasy_score), .groups = 'drop') %>%
   top_n(0.1 * n(), AvgFantasyPoints)
 
-# Filter only star players' game data based on fantasy points
+# Filter only star players game data
 star_player_stats_fantasy <- player_stats %>%
   filter(player_id %in% star_players_fantasy$player_id)
 
@@ -32,7 +31,7 @@ fantasy_tagging_index <- fantasy_effectiveness %>%
   arrange(AvgFantasyPointDeviation) %>%
   mutate(FantasyTaggingRank = row_number())
 
-# Plot the fantasy tagging index
+# Plot 
 ggplot(fantasy_tagging_index, aes(x = reorder(match_away_team, FantasyTaggingRank), y = AvgFantasyPointDeviation)) +
   geom_col() +
   coord_flip() +  # Flip the axes for easier reading

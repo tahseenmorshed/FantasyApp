@@ -1,4 +1,4 @@
-# Normalize deviations within each metric for comparison
+# Normalize deviations within each metric
 star_player_stats <- star_player_stats %>%
   mutate(NormTackleDev = (TackleDeviation - min(TackleDeviation)) / (max(TackleDeviation) - min(TackleDeviation)),
          NormGoalDev = (GoalDeviation - min(GoalDeviation)) / (max(GoalDeviation) - min(GoalDeviation)),

@@ -1,37 +1,36 @@
 library(fitzRoy)
 library(dplyr)
 
-# Fetch player stats for the 2023 season
 player_stats <- fetch_player_stats(season = 2023, source = "fryzigg")
 
-# Identify star players based on tackles
+# Identify star players
 star_players_tackles <- player_stats %>%
   group_by(player_id) %>%
   summarise(AvgTackles = mean(tackles), .groups = 'drop') %>%
   top_n(0.1 * n(), AvgTackles)
 
-# Filter only star players' game data based on tackles
+# Filter only star players
 star_player_stats_tackles <- player_stats %>%
   filter(player_id %in% star_players_tackles$player_id)
 
-# Calculate tackle deviations for each game
+# Calculate tackle deviations
 star_player_stats_tackles <- star_player_stats_tackles %>%
   group_by(player_id) %>%
   mutate(AvgSeasonTackles = mean(tackles)) %>%
   ungroup() %>%
   mutate(TackleDeviation = tackles - AvgSeasonTackles)
 
-# Aggregate tackle deviation by opponent team
+# Aggregate 
 tackle_effectiveness <- star_player_stats_tackles %>%
   group_by(match_away_team) %>%
   summarise(AvgTackleDeviation = mean(TackleDeviation), .groups = 'drop')
 
-# Rank teams by average tackle deviation
+# Rank teams
 tackle_tagging_index <- tackle_effectiveness %>%
   arrange(AvgTackleDeviation) %>%
   mutate(TackleTaggingRank = row_number())
 
-# Plot the tackle tagging index
+# Plot
 ggplot(tackle_tagging_index, aes(x = reorder(match_away_team, TackleTaggingRank), y = AvgTackleDeviation)) +
   geom_col() +
   coord_flip() +  # Flip the axes for easier reading

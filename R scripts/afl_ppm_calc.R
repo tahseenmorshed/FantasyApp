@@ -3,8 +3,6 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 
-# Assuming player_stats is already fetched and star_players identified as shown previously
-
 # Calculate deviations for tackles, disposals, and fantasy points
 star_player_stats <- player_stats %>%
   filter(player_id %in% star_players$player_id) %>%
@@ -17,7 +15,7 @@ star_player_stats <- player_stats %>%
          FantasyPointDeviation = afl_fantasy_score - AvgFantasyPoints) %>%
   ungroup()
 
-# Prepare data for plotting, melting into long format for faceting
+# Prepare data for plotting
 plot_data <- star_player_stats %>%
   select(player_id, match_away_team, TackleDeviation, DisposalDeviation, FantasyPointDeviation) %>%  # Updated from GoalDeviation
   pivot_longer(cols = c(TackleDeviation, DisposalDeviation, FantasyPointDeviation),  # Updated from GoalDeviation
